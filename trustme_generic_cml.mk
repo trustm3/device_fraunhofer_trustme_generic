@@ -37,7 +37,6 @@ PRODUCT_PACKAGES += \
 	cml-scd \
 	busybox-android \
 	charger charger_res_images \
-	strace_static \
 	cml-run
 
 ifneq ($(TRUSTME_HARDWARE), x86)

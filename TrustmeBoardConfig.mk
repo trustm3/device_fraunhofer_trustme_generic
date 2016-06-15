@@ -24,25 +24,3 @@
 # SELinux
 BOARD_SEPOLICY_DIRS += \
        device/fraunhofer/trustme_generic/sepolicy
-
-# The list below is order dependent
-BOARD_SEPOLICY_UNION += \
-      file.te \
-      gpsd.te \
-      init.te \
-      healthd.te \
-      mpdecision.te \
-      platform_app.te \
-      radio.te \
-      rild.te \
-      sdcardd.te \
-      sensors.te \
-      svc.te \
-      system_app.te \
-      system_server.te \
-      ueventd.te \
-      untrusted_app.te \
-      wpa.te \
-      zygote.te \
-      file_contexts \
-      fs_use

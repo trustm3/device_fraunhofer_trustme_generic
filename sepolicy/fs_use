@@ -1,3 +1,2 @@
 # Label inodes via getxattr.
-fs_use_xattr squashfs u:object_r:labeledfs:s0;
 fs_use_xattr overlayfs u:object_r:labeledfs:s0;
