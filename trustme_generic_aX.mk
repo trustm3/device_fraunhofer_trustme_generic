@@ -22,7 +22,6 @@
 #
 
 PRODUCT_PACKAGES += \
-   busybox \
    Launcher3 \
    ChromePublic \
    wpa_proxy \
@@ -33,6 +32,7 @@ PRODUCT_PACKAGES += \
    FDroid \
    OpenVPN \
    OpenConnect \
+   Exchange2 \
    TrustmeService \
    GmsCore
 

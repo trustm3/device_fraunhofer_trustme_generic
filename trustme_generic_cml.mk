@@ -35,13 +35,14 @@ PRODUCT_PACKAGES += \
 	cml-daemon \
 	cml-control \
 	cml-scd \
+	toolbox_static \
+	toybox_static \
 	busybox-android \
 	charger charger_res_images \
 	cml-run
 
 ifneq ($(TRUSTME_HARDWARE), x86)
 PRODUCT_PACKAGES += \
-	perf_static \
 	stunnel \
 	cml-panic \
 	cml-logcat
