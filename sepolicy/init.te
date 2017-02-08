@@ -1,0 +1,34 @@
+# allow container init (cmld child) to mount its filesystems 
+allow init self:capability2 sys_mount;
+allow init system_file:dir mounton;
+
+# setcon to init domain.
+allow init self:process setcurrent;
+
+# cgroup filesystem initialization prior to setting the cgroup root directory label.
+allow init unlabeled:dir search;
+
+#allow container init to create loop devs
+allow init dev_type:blk_file create;
+
+#allow conatiner init to create sockets in /dev/sockets
+allow init { device socket_device }:dir relabelto;
+
+#allow /dev/__properties__  in container
+allow init properties_device:file relabelto;
+
+#allow /sys
+allow init sysfs:{ dir file lnk_file } relabelfrom;
+allow init sysfs_type:{ dir file lnk_file } relabelto;
+
+# cmld sockets
+type_transition init device:sock_file cmld_socket;
+
+# Allow container init to spawn dnsmasq in it's own domain
+domain_auto_trans(init, dnsmasq_exec, dnsmasq)
+
+# Allow container init to spawn hardware proxies in itheir coresponding domain
+domain_auto_trans(init, gpsd_exec, gpsd)
+domain_auto_trans(init, mpdecision_exec, mpdecision)
+domain_auto_trans(init, sensors_exec, sensors)
+domain_auto_trans(init, svc_exec, shell)

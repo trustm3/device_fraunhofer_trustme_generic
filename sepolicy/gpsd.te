@@ -1,0 +1,8 @@
+# allow gps proxy to use trustme-com
+allow gpsd trustme-com:dir create_dir_perms;
+allow gpsd trustme-com:sock_file create_file_perms;
+
+# allow gps-proxy to connect to gpsd socktes
+allow gpsd self:netlink_socket create_socket_perms;
+allow gpsd self:socket create_socket_perms;
+

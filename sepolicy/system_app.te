@@ -1,0 +1,5 @@
+# allow conatiner system apps including trustme service, screen
+# to talk to cml-control, cml-services sockets
+allow system_app cmld_socket:sock_file { read write };
+allow system_app init:unix_stream_socket connectto;
+

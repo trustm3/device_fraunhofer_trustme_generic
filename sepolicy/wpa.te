@@ -1,0 +1,6 @@
+# allow wpa proxy to use trustme-com
+allow wpa trustme-com:dir create_dir_perms;
+allow wpa trustme-com:sock_file create_file_perms;
+
+# allow wpa-proxy to create/remove (system) wpa client sockets
+allow wpa system_wpa_socket:sock_file create_file_perms;

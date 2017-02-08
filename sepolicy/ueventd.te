@@ -1,0 +1,2 @@
+# access to unlabled dm root
+allow ueventd unlabeled:dir search;

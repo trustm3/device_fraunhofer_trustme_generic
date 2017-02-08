@@ -1,0 +1,3 @@
+# allow cap_sys_mount
+allow zygote self:capability2 sys_mount;
+allow zygote self:capability sys_nice;

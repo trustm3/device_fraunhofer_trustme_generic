@@ -1,0 +1,2 @@
+type cmld_socket, file_type;
+type trustme-com, file_type;

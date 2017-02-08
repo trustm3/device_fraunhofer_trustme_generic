@@ -1,0 +1,2 @@
+# allow conatiner sdcardd to mount 
+allow sdcardd self:capability2 sys_mount;

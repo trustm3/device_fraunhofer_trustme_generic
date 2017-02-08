@@ -1,0 +1,3 @@
+This device subtree contains generic device files for trustme_{hw}_cml, _a0, _aX
+e.g. trustme_hammerhead_a0 and trustme_i9505_a0.mk just inherrit from trustme_generic_a0.mk
+to share a singel point where common package lists can be maintained.

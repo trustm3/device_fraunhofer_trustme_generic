@@ -1,0 +1,22 @@
+# cmld communication sockets 
+/dev/socket/cml-.* u:object_r:cmld_socket:s0
+
+# aX userspace server/proxy communication type
+/data/trustme-com(/.*)? u:object_r:trustme-com:s0
+
+# a0 ril-proxy socket
+/data/misc/radio/rild-proxy.sock u:object_r:rild_socket:s0
+/data/misc/radio 	u:object_r:radio_data_file:s0
+
+# proxyies
+/system/bin/rilproxy    u:object_r:rild_exec:s0
+/system/bin/wpad        u:object_r:wpa_exec:s0
+/system/bin/wpa_proxy   u:object_r:wpa_exec:s0
+
+/system/bin/wifi_enable u:object_r:svc_exec:s0
+
+/system/bin/gps-server 		u:object_r:gpsd_exec:s0
+/system/bin/sensors-server	u:object_r:sensors_exec:s0
+/system/bin/power-proxy 	u:object_r:mpdecision_exec:s0
+
+/system/bin/resolv_sync  	u:object_r:dnsmasq_exec:s0

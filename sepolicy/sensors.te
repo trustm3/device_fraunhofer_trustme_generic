@@ -1,0 +1,3 @@
+# allow sensors server to use trustme-com
+allow sensors trustme-com:dir create_dir_perms;
+allow sensors trustme-com:sock_file create_file_perms;

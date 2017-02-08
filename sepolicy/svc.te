@@ -1,0 +1,9 @@
+type svc_exec, exec_type, file_type;
+
+# allow shell (wifi_enable) to use trustme-com
+allow shell trustme-com:dir create_dir_perms;
+allow shell trustme-com:sock_file create_file_perms;
+
+allow shell self:capability dac_override;
+allow shell wpa:unix_stream_socket connectto;
+allow shell dalvikcache_data_file:file rw_file_perms;
