@@ -1,9 +1,11 @@
 import /init.usb.rc
 
 on early-init
-    # Set the security context for the init process.
-    # This should occur before anything else (e.g. ueventd) is started.
-    setcon u:r:init:s0
+    # Set init and its forked children's oom_adj.
+    write /proc/1/oom_score_adj -1000
+
+    # Set the security context of /adb_keys if present.
+    restorecon /adb_keys
 
     start ueventd
     loglevel 3 # this *only* affects init, not ueventd etc.!
@@ -17,9 +19,6 @@ on early-init
 on init
     sysclktz 0
     #export PATH /bin:/sbin:
-
-    # Set SELinux to permissive mode...
-    setenforce 0
 
     export PATH /bin:/sbin:/system/bin:
     mkdir /system/bin 0755 root shell
@@ -75,6 +74,10 @@ on post-fs
     # crash dump location
     mkdir /data/core
     write /proc/sys/kernel/core_pattern /data/core/%e.%p
+
+    # We restorecon /data in case the userdata partition has been reset.
+    restorecon_recursive /data
+
 
 on boot
    ifup lo

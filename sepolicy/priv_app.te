@@ -1,0 +1,9 @@
+# allow conatiner priv apps including trustme service, screen
+# to talk to cml-control, cml-services sockets
+allow priv_app cmld_socket:sock_file { read write };
+allow priv_app init:unix_stream_socket connectto;
+
+# allow shared binder service, e.g., audio
+allow priv_app vr_manager_service:service_manager find;
+
+allow priv_app zygote:dir search;
