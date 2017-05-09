@@ -34,7 +34,15 @@ PRODUCT_PACKAGES += \
    OpenConnect \
    Exchange2 \
    TrustmeService \
-   GmsCore
+   GmsCore \
+   GsfProxy \
+   FakeStore \
+   IchnaeaNlpBackend
+
+# codeaurora and lineageos packages
+PRODUCT_PACKAGES += \
+   Eleven \
+   SnapdragonGallery
 
 ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
 PRODUCT_COPY_FILES += \
@@ -46,6 +54,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 #PRODUCT_COPY_FILES += \
 #    device/fraunhofer/trustme_hammerhead_aX/trustme-bootanimation-1080.zip:system/media/bootanimation.zip
+ 
+# set default permission for microg services (FAKE_SIGNATURE)
+PRODUCT_COPY_FILES += \
+    device/fraunhofer/trustme_generic/aX/microg-permissions.xml:system/etc/default-permissions/microg-permissions.xml \
+    device/fraunhofer/trustme_generic/aX/microg-sysconfig.xml:system/etc/sysconfig/microg-sysconfig.xml
 
 ### overwrite ssh files
 #PRODUCT_COPY_FILES += \
