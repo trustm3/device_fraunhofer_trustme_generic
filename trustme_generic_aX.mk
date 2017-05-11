@@ -23,6 +23,7 @@
 
 PRODUCT_PACKAGES += \
    Launcher3 \
+   WallpaperPicker \
    ChromePublic \
    wpa_proxy \
    wifi_enable \
