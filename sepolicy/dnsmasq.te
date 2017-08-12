@@ -1,3 +1,0 @@
-# allow dnsmasq to read dhcp config files from trustme-com
-allow dnsmasq trustme-com:dir r_dir_perms;
-allow dnsmasq trustme-com:file r_file_perms;

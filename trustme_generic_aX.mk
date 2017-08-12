@@ -25,11 +25,8 @@ PRODUCT_PACKAGES += \
    Launcher3 \
    WallpaperPicker \
    ChromePublic \
-   wpa_proxy \
-   wifi_enable \
    sensors-client.default \
    gps-client.default \
-   rilproxy \
    FDroid \
    OpenVPN \
    OpenConnect \
@@ -70,4 +67,8 @@ PRODUCT_COPY_FILES += \
 #$(shell mkdir -p out/target/product/trustme_hammerhead_aX/system/etc/wifi/)
 #$(shell cp device/fraunhofer/trustme_hammerhead_aX/wpa_supplicant_overlay.conf   out/target/product/trustme_hammerhead_aX/system/etc/wifi/)
 #$(shell cp device/fraunhofer/trustme_hammerhead_aX/p2p_supplicant_overlay.conf   out/target/product/trustme_hammerhead_aX/system/etc/wifi/)
+
+# enable ethernet
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
 

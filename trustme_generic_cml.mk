@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += \
 	toybox_static \
 	busybox-android \
 	charger charger_res_images \
+	dnsmasq_static \
 	cml-run
 
 ifneq ($(TRUSTME_HARDWARE), x86)
@@ -66,6 +67,7 @@ endif
 #    trustme/build/device_provisioning/test_certificates/dev.user.adbkey.pub:root/adb_keys
 
 PRODUCT_COPY_FILES += \
+    device/fraunhofer/trustme_generic/cml/dnsmasq.conf:root/etc/dnsmasq.conf \
     device/fraunhofer/trustme_generic/cml/init.trustme_generic_cml_debug.rc:root/init.trustme_generic.rc
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
