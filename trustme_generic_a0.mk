@@ -113,7 +113,7 @@ DEVICE_PACKAGE_OVERLAYS += device/fraunhofer/trustme_generic/a0/overlay
 PRODUCT_PACKAGES += \
    TrustmeService \
    rild \
-   rilproxy \
+   rilfwd \
    sensors-client.default \
    perf \
    sensors-server \
@@ -123,6 +123,7 @@ PRODUCT_PACKAGES += \
    TrustmeKeyguard
 
 PRODUCT_COPY_FILES += \
+    device/fraunhofer/trustme_generic/a0/dnsmasq.conf:system/etc/dnsmasq.conf \
     device/fraunhofer/trustme_generic/a0/trustme-bootanimation-1080.zip:system/media/bootanimation.zip
 
 # Overwrite disabled functions with empty xmls

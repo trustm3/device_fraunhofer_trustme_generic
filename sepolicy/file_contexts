@@ -9,6 +9,7 @@
 /data/misc/radio 	u:object_r:radio_data_file:s0
 
 # proxyies
+/system/bin/rilfwd      u:object_r:rild_exec:s0
 /system/bin/rilproxy    u:object_r:rild_exec:s0
 /system/bin/wpad        u:object_r:wpa_exec:s0
 /system/bin/wpa_proxy   u:object_r:wpa_exec:s0
