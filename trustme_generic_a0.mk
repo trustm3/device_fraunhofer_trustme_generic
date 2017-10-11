@@ -119,11 +119,9 @@ PRODUCT_PACKAGES += \
    sensors-server \
    gps-server \
    power-proxy \
-   resolv_sync \
    TrustmeKeyguard
 
 PRODUCT_COPY_FILES += \
-    device/fraunhofer/trustme_generic/a0/dnsmasq.conf:system/etc/dnsmasq.conf \
     device/fraunhofer/trustme_generic/a0/trustme-bootanimation-1080.zip:system/media/bootanimation.zip
 
 # Overwrite disabled functions with empty xmls

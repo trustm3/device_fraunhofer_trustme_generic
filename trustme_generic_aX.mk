@@ -27,6 +27,7 @@ PRODUCT_PACKAGES += \
    ChromePublic \
    sensors-client.default \
    gps-client.default \
+   resolv_sync \
    FDroid \
    OpenVPN \
    OpenConnect \
@@ -52,6 +53,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 #PRODUCT_COPY_FILES += \
 #    device/fraunhofer/trustme_hammerhead_aX/trustme-bootanimation-1080.zip:system/media/bootanimation.zip
+
+PRODUCT_COPY_FILES += \
+    device/fraunhofer/trustme_generic/aX/dnsmasq.conf:system/etc/dnsmasq.conf \
  
 # set default permission for microg services (FAKE_SIGNATURE)
 PRODUCT_COPY_FILES += \
