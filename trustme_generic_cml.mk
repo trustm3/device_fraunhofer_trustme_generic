@@ -48,6 +48,7 @@ PRODUCT_PACKAGES += \
 	cml-logcat
 else
 PRODUCT_PACKAGES += \
+	cml-service-container \
 	cml-tpm2d \
 	tpm2-control \
 	tpm2_simulator
@@ -66,7 +67,8 @@ endif
 #    trustme/build/device_provisioning/test_certificates/dev.user.adbkey.pub:root/adb_keys
 
 PRODUCT_COPY_FILES += \
-    device/fraunhofer/trustme_generic/cml/init.trustme_generic_cml_debug.rc:root/init.trustme_generic.rc
+    device/fraunhofer/trustme_generic/cml/init.trustme_generic_cml_debug.rc:root/init.trustme_generic.rc \
+    device/fraunhofer/trustme_generic/cml/karaf:root/sbin/karaf
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.adb.secure=1
