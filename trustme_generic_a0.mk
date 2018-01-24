@@ -131,7 +131,8 @@ PRODUCT_COPY_FILES += \
     device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.nfc.xml \
     device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.location.gps.xml
+    device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.ethernet.xml
 
 # Copy trustme specific handheld_core_hardware.xml (e.g., removed camera and bluetooth)
 PRODUCT_COPY_FILES += \
