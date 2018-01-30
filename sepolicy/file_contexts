@@ -17,7 +17,6 @@
 /system/bin/wifi_enable u:object_r:svc_exec:s0
 
 /system/bin/gps-server 		u:object_r:gpsd_exec:s0
-/system/bin/sensors-server	u:object_r:sensors_exec:s0
-/system/bin/power-proxy 	u:object_r:mpdecision_exec:s0
+/system/bin/sensors-server	u:object_r:sensor_server_exec:s0
 
 /system/bin/resolv_sync  	u:object_r:dnsmasq_exec:s0

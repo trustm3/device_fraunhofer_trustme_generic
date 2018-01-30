@@ -1,0 +1,13 @@
+type sensor_server, domain, domain_deprecated;
+type sensor_server_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(sensor_server)
+
+# Access sensor nodes (/dev/msm_dsps, /dev/sensors)
+allow sensor_server sensors_device:chr_file rw_file_perms;
+
+
+# allow sensor server to use trustme-com
+allow sensor_server trustme-com:dir create_dir_perms;
+allow sensor_server trustme-com:sock_file create_file_perms;

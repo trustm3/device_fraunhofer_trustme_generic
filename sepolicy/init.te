@@ -36,8 +36,7 @@ domain_auto_trans(init, dnsmasq_exec, dnsmasq)
 
 # Allow container init to spawn hardware proxies in itheir coresponding domain
 domain_auto_trans(init, gpsd_exec, gpsd)
-domain_auto_trans(init, mpdecision_exec, mpdecision)
-domain_auto_trans(init, sensors_exec, sensors)
+domain_auto_trans(init, sensor_server_exec, sensor_server)
 domain_auto_trans(init, svc_exec, shell)
 
 
