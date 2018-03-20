@@ -1,0 +1,14 @@
+on property:trustme.provisioning.mode=no
+   mkdir /data/misc 0775 system system
+   mkdir /data/misc/dhcp 0775 system system
+   start dnsmasq
+   start stunnel
+
+## Daemon processes to be run by init.
+##
+service stunnel /sbin/stunnel /data/cml/stunnel-client.conf
+   seclabel u:r:init:s0
+
+#service dnsmasq /sbin/dnsmasq --pid-file=/data/misc/dhcp/dnsmasq.pid --conf-file=/etc/dnsmasq.conf --resolv-file=/data/misc/dhcp/dnsmasq.resolv.conf --user=dhcp --no-poll --clear-on-reload -k
+service dnsmasq /sbin/dnsmasq --pid-file=/data/misc/dhcp/dnsmasq.pid --conf-file=/etc/dnsmasq.conf --user=dhcp --no-poll --clear-on-reload -k
+   seclabel u:r:init:s0

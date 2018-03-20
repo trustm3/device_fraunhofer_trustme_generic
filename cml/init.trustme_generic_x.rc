@@ -1,0 +1,16 @@
+# start scd first and check for certificates/provisioning mode, then set property to start cml
+on post-fs-data
+   # temp folder for peristent tpm2_simulator
+   mkdir /data/tpm2_simulator
+
+on property:trustme.provisioning.mode=no
+   start tpm2_simulator
+   start cml-tpm2d
+
+## Daemon processes to be run by init.
+##
+service cml-tpm2d /sbin/cml-tpm2d
+   seclabel u:r:init:s0
+
+service tpm2_simulator /sbin/tpm2_simulator
+   seclabel u:r:init:s0
