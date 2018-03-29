@@ -34,7 +34,8 @@ $(call inherit-product, device/fraunhofer/trustme_generic/a0/full_base_telephony
 PRODUCT_PACKAGES += \
     OneTimeInitializer \
     Provision \
-    SystemUI
+    SystemUI \
+    librs_jni
 #----------------------------------------------------------------------------#
 
 
@@ -127,7 +128,6 @@ PRODUCT_COPY_FILES += \
 # Overwrite disabled functions with empty xmls
 PRODUCT_COPY_FILES += \
     device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.usb.host.xml \
     device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.nfc.xml \
     device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     device/fraunhofer/trustme_generic/empty.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
